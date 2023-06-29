@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QApplication>
-#include "mainpage.h"
+#include "memberwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -36,6 +36,8 @@ void MainWindow::on_pushButton_clicked()
     qDebug()<<"用户输入的密码"+userInputPassword;
     qDebug()<<"用户输入的类别"+userInputtype;
 
+
+    //用户
     if(ui->radioButton_2->isChecked()){
         QSqlQuery sql;
         sql.prepare("select * from `member` where `memberNumber` = :userInputNumber");
@@ -60,6 +62,7 @@ void MainWindow::on_pushButton_clicked()
         }
     }
 
+    // 管理员
     if(ui->radioButton->isChecked()){
         QSqlQuery sql;
         sql.prepare("select * from mms.`administrator` where `administratorNumber` = :userInputNumber");
@@ -76,10 +79,12 @@ void MainWindow::on_pushButton_clicked()
         qDebug()<<"数据库找到的密码"+administratorPassword;
                     sql.clear();
 
+
+        // 实现跳转
         if(userInputPassword == administratorPassword && userInputNumber == administratorNumber){
             qDebug()<<"登录成功!";
             this->~MainWindow();
-            mainpage * w = new mainpage();
+            memberwindow * w = new memberwindow();
             w -> show();
         }
         else{

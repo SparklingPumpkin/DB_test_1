@@ -13,16 +13,19 @@ SOURCES += \
     database.cpp \
     main.cpp \
     mainpage.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    memberwindow.cpp
 
 HEADERS += \
     database.h \
     mainpage.h \
-    mainwindow.h
+    mainwindow.h \
+    memberwindow.h
 
 FORMS += \
     mainpage.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    memberwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

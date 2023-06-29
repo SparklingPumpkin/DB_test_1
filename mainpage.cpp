@@ -7,14 +7,14 @@ mainpage::mainpage(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    //连接数据库
+    // 连接数据库
     this -> myDatabase.getConnection();
 
-    //为表格模式指针指定内存
+    // 为表格模式指针指定内存
     this -> dataTableModel = new QStandardItemModel();
 
-    //设置表格
-    this -> setTableInfo();
+    // 设置表格
+    // this -> setTableInfo();
 
 }
 
