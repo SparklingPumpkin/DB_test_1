@@ -10,6 +10,14 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    admwindow.cpp \
+    c2_admember.cpp \
+    c2_admerchandise.cpp \
+    c2_adorder.cpp \
+    c_memberchat.cpp \
+    c_memberinfo.cpp \
+    c_membermarket.cpp \
+    c_memberorder.cpp \
     database.cpp \
     main.cpp \
     mainpage.cpp \
@@ -17,12 +25,28 @@ SOURCES += \
     memberwindow.cpp
 
 HEADERS += \
+    admwindow.h \
+    c2_admember.h \
+    c2_admerchandise.h \
+    c2_adorder.h \
+    c_memberchat.h \
+    c_memberinfo.h \
+    c_membermarket.h \
+    c_memberorder.h \
     database.h \
     mainpage.h \
     mainwindow.h \
     memberwindow.h
 
 FORMS += \
+    admwindow.ui \
+    c2_admember.ui \
+    c2_admerchandise.ui \
+    c2_adorder.ui \
+    c_memberchat.ui \
+    c_memberinfo.ui \
+    c_membermarket.ui \
+    c_memberorder.ui \
     mainpage.ui \
     mainwindow.ui \
     memberwindow.ui

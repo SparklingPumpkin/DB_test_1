@@ -1,5 +1,6 @@
-#ifndef MEMBERWINDOW_H
-#define MEMBERWINDOW_H
+#ifndef C2_ADORDER_H
+#define C2_ADORDER_H
+
 
 #include <QMainWindow>
 #include <QWidget>
@@ -9,16 +10,16 @@
 #include <QStandardItemModel>
 
 namespace Ui {
-class memberwindow;
+class c2_adorder;
 }
 
-class memberwindow : public QMainWindow
+class c2_adorder : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit memberwindow(QWidget *parent = nullptr);
-    ~memberwindow();
+    explicit c2_adorder(QWidget *parent = nullptr);
+    ~c2_adorder();
 
     // 连接数据库的对象
     Database myDatabase;
@@ -32,21 +33,11 @@ public:
     // 设置表格组件模式
     QStandardItemModel * dataTableModel;
 
-
-//定义按钮功能函数
 private slots:
-    void on_pB_info_clicked();
-    void on_pB_market_clicked();
-    void on_pB_order_clicked();
-    void on_pB_chat_clicked();
-    void on_pB_logoff_clicked();
-
-
+    void on_pB_back_clicked();
 
 private:
-    Ui::memberwindow *ui;
+    Ui::c2_adorder *ui;
 };
 
-
-
-#endif // MEMBERWINDOW_H
+#endif // C2_ADORDER_H

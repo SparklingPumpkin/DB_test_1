@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>memberwindow</class>
- <widget class="QMainWindow" name="memberwindow">
+ <class>admwindow</class>
+ <widget class="QMainWindow" name="admwindow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -14,76 +14,63 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="pB_memberm">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>150</y>
+      <width>86</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>会员管理</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pB_orderm">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>150</y>
+      <width>86</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>订单管理</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pB_merchandisem">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>330</y>
+      <width>86</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>商品管理</string>
+    </property>
+   </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>80</y>
-      <width>62</width>
+      <x>320</x>
+      <y>40</y>
+      <width>111</width>
       <height>20</height>
      </rect>
     </property>
     <property name="text">
-     <string>你好!</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pB_info">
-    <property name="geometry">
-     <rect>
-      <x>160</x>
-      <y>190</y>
-      <width>86</width>
-      <height>29</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>个人信息</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pB_market">
-    <property name="geometry">
-     <rect>
-      <x>490</x>
-      <y>190</y>
-      <width>86</width>
-      <height>29</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>购物</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pB_order">
-    <property name="geometry">
-     <rect>
-      <x>160</x>
-      <y>340</y>
-      <width>86</width>
-      <height>29</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>查看订单</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pB_chat">
-    <property name="geometry">
-     <rect>
-      <x>490</x>
-      <y>340</y>
-      <width>86</width>
-      <height>29</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>聊天</string>
+     <string>你好, 管理员!</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pB_logoff">
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>80</y>
+      <y>50</y>
       <width>86</width>
       <height>29</height>
      </rect>

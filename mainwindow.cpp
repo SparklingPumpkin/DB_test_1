@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include <QApplication>
 #include "memberwindow.h"
+#include "admwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -56,6 +57,9 @@ void MainWindow::on_pushButton_clicked()
 
         if(userInputPassword == memberPassword && userInputNumber == memberNumber){
             qDebug()<<"登录成功!";
+            this->~MainWindow();
+            memberwindow * w = new memberwindow();
+            w -> show();
         }
         else{
             qDebug()<<"登录失败!";
@@ -84,8 +88,9 @@ void MainWindow::on_pushButton_clicked()
         if(userInputPassword == administratorPassword && userInputNumber == administratorNumber){
             qDebug()<<"登录成功!";
             this->~MainWindow();
-            memberwindow * w = new memberwindow();
+            admwindow * w = new admwindow();
             w -> show();
+
         }
         else{
             qDebug()<<"登录失败!";
