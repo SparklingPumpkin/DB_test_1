@@ -34,6 +34,15 @@ public:
 
 private slots:
     void on_pB_back_clicked();
+    void on_pB_create_clicked();
+    void on_pB_update_clicked();
+
+
+    void on_pB_delete_clicked();
+
+    void on_pB_shuaxin_clicked();
+
+    void on_pB_select_clicked();
 
 private:
     Ui::c2_admember *ui;

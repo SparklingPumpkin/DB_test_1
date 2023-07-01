@@ -20,7 +20,6 @@ SOURCES += \
     c_memberorder.cpp \
     database.cpp \
     main.cpp \
-    mainpage.cpp \
     mainwindow.cpp \
     memberwindow.cpp
 
@@ -34,7 +33,6 @@ HEADERS += \
     c_membermarket.h \
     c_memberorder.h \
     database.h \
-    mainpage.h \
     mainwindow.h \
     memberwindow.h
 
@@ -47,7 +45,6 @@ FORMS += \
     c_memberinfo.ui \
     c_membermarket.ui \
     c_memberorder.ui \
-    mainpage.ui \
     mainwindow.ui \
     memberwindow.ui
 
