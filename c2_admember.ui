@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>member manage</string>
+     <string/>
     </property>
    </widget>
    <widget class="QPushButton" name="pB_back">
@@ -182,7 +182,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>新建会员信息</string>
+       <string>处理会员信息</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pB_create">
@@ -285,6 +285,12 @@
      <height>25</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menumember_manage">
+    <property name="title">
+     <string>member manage</string>
+    </property>
+   </widget>
+   <addaction name="menumember_manage"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

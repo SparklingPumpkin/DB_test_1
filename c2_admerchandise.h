@@ -35,6 +35,16 @@ public:
 private slots:
     void on_pB_back_clicked();
 
+    void on_pB_create_4_clicked();
+
+    void on_pB_update_4_clicked();
+
+    void on_pB_delete_4_clicked();
+
+    void on_pB_shuaxin_clicked();
+
+    void on_pB_select_clicked();
+
 private:
     Ui::c2_admerchandise *ui;
 };
