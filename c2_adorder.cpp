@@ -90,7 +90,7 @@ void c2_adorder::on_pB_create_4_clicked()
     QString c2_amount = ui->new_amount->text();//姓名
 
     QSqlQuery sql;
-    sql.prepare("insert into order values(:c2_orderNumber,:c2_memberNumber,:c2_merchandiseNumber, :c2_quantity, :c2_amount)");
+    sql.prepare("insert into order values(:c2_orderNumber, :c2_memberNumber, :c2_merchandiseNumber, :c2_quantity, :c2_amount)");
     sql.bindValue(":c2_orderNumber",c2_orderNumber);
     sql.bindValue(":c2_memberNumber",c2_memberNumber);
     sql.bindValue(":c2_merchandiseNumber",c2_merchandiseNumber);
@@ -228,4 +228,5 @@ void c2_adorder::on_pB_select_clicked()
         ui->order_view->setModel(this->dataTableModel);
     }
 }
+
 

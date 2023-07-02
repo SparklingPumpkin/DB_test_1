@@ -32,21 +32,31 @@ public:
     // 设置表格组件模式
     QStandardItemModel * dataTableModel;
 
+//    QString *key_id;
+
+
+
+//通信
+public slots:
+    void get_message_2(QString m);
 
 //定义按钮功能函数
 private slots:
-    void on_pB_info_clicked();
     void on_pB_market_clicked();
     void on_pB_order_clicked();
     void on_pB_chat_clicked();
     void on_pB_logoff_clicked();
 
+    void on_pB_update_clicked();
+    void on_pB_delete_clicked();
 
+
+    void on_pB_getinfo_clicked();
 
 private:
     Ui::memberwindow *ui;
 };
 
-
+extern QString globalkey;
 
 #endif // MEMBERWINDOW_H

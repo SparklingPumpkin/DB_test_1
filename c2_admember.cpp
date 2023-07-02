@@ -2,6 +2,7 @@
 #include "ui_c2_admember.h"
 #include "admwindow.h"
 #include <QApplication>
+#include <QLabel>
 
 c2_admember::c2_admember(QWidget *parent) :
     QMainWindow(parent),
@@ -253,8 +254,11 @@ void c2_admember::on_pB_select_clicked()
 
         // 最后，将设计好的表格模式，装载在表格上
         ui->member_view->setModel(this->dataTableModel);
-
     }
-
 }
+
+
+
+
+
 

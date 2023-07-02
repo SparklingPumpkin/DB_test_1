@@ -4,6 +4,7 @@
 #include "c2_admerchandise.h"
 #include "c2_adorder.h"
 #include "mainwindow.h"
+#include <QLabel>
 
 admwindow::admwindow(QWidget *parent) :
     QMainWindow(parent),
@@ -17,7 +18,12 @@ admwindow::~admwindow()
     delete ui;
 }
 
-
+//通信
+void admwindow::get_message(QString m){
+    qDebug()<<"是本大爷!";
+    qDebug()<<m;
+    ui->label_2->setText(m);
+}
 
 //跳转
 void admwindow::on_pB_memberm_clicked()
@@ -25,6 +31,7 @@ void admwindow::on_pB_memberm_clicked()
     this->~admwindow();
     c2_admember * w = new c2_admember();
     w -> show();
+
 }
 void admwindow::on_pB_merchandisem_clicked()
 {

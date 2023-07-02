@@ -15,7 +15,6 @@ SOURCES += \
     c2_admerchandise.cpp \
     c2_adorder.cpp \
     c_memberchat.cpp \
-    c_memberinfo.cpp \
     c_membermarket.cpp \
     c_memberorder.cpp \
     database.cpp \
@@ -29,7 +28,6 @@ HEADERS += \
     c2_admerchandise.h \
     c2_adorder.h \
     c_memberchat.h \
-    c_memberinfo.h \
     c_membermarket.h \
     c_memberorder.h \
     database.h \
@@ -42,7 +40,6 @@ FORMS += \
     c2_admerchandise.ui \
     c2_adorder.ui \
     c_memberchat.ui \
-    c_memberinfo.ui \
     c_membermarket.ui \
     c_memberorder.ui \
     mainwindow.ui \

@@ -6,7 +6,8 @@
 #include <QDebug>
 #include <QMainWindow>
 #include <database.h>
-
+#include "admwindow.h"
+#include "memberwindow.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -21,13 +22,23 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+
 signals:
     void try_login();
+    void sendToB(QString m);
+
+//public slots:
+//    void send_message();
 
 private slots:
     void on_pushButton_clicked();
 
+
 private:
     Ui::MainWindow *ui;
+    //通信
+    admwindow admwindow_d;
+    memberwindow memberwindow_d;
+
 };
 #endif // MAINWINDOW_H

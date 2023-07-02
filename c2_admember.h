@@ -7,6 +7,7 @@
 #include <QDebug>
 #include <database.h>
 #include <QStandardItemModel>
+#include <QLabel>
 
 namespace Ui {
 class c2_admember;
@@ -32,17 +33,23 @@ public:
     // 设置表格组件模式
     QStandardItemModel * dataTableModel;
 
+    // 设置文本内容
+    QLabel * presentation;
+
+signals:
+    void sendMessage();
+
 private slots:
     void on_pB_back_clicked();
     void on_pB_create_clicked();
     void on_pB_update_clicked();
-
 
     void on_pB_delete_clicked();
 
     void on_pB_shuaxin_clicked();
 
     void on_pB_select_clicked();
+
 
 private:
     Ui::c2_admember *ui;

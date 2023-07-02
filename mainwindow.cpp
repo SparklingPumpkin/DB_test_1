@@ -3,6 +3,7 @@
 #include <QApplication>
 #include "memberwindow.h"
 #include "admwindow.h"
+#include "memberwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -10,6 +11,10 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     this->myDatabase.getConnection();
+    //通信
+    connect(this, &MainWindow::sendToB, &admwindow_d, &admwindow::get_message); // 连接信号与槽
+    connect(this, &MainWindow::sendToB, &memberwindow_d, &memberwindow::get_message_2); // 连接信号与槽
+
 }
 
 MainWindow::~MainWindow()
@@ -17,6 +22,11 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+// 发送信号
+//void MainWindow::send_message(){
+//    QString userInputNumber = ui->InputNumber->text();
+//    emit sendToB(userInputNumber);
+//}
 
 void MainWindow::on_pushButton_clicked()
 {
@@ -33,9 +43,16 @@ void MainWindow::on_pushButton_clicked()
 
     QString userInputNumber = ui->InputNumber->text();
     QString userInputPassword = ui->InputPassword->text();
-    qDebug()<<"用户输入的账号"+userInputNumber;
-    qDebug()<<"用户输入的密码"+userInputPassword;
-    qDebug()<<"用户输入的类别"+userInputtype;
+//    qDebug()<<"用户输入的账号"+userInputNumber;
+//    qDebug()<<"用户输入的密码"+userInputPassword;
+//    qDebug()<<"用户输入的类别"+userInputtype;
+
+    //通信
+    admwindow_d.get_message(userInputNumber);
+    emit sendToB(userInputNumber); //发送信号
+    memberwindow_d.get_message_2(userInputNumber);
+    emit sendToB(userInputNumber); //发送信号
+
 
 
     //用户
@@ -96,7 +113,5 @@ void MainWindow::on_pushButton_clicked()
             qDebug()<<"登录失败!";
         }
     }
-
-
 }
 
