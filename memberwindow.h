@@ -7,6 +7,7 @@
 #include <QDebug>
 #include <database.h>
 #include <QStandardItemModel>
+#include <QProcess>
 
 namespace Ui {
 class memberwindow;
@@ -53,8 +54,11 @@ private slots:
 
     void on_pB_getinfo_clicked();
 
+//    void onProcessFinished(int exitCode, QProcess::ExitStatus exitStatus);
+
 private:
     Ui::memberwindow *ui;
+
 };
 
 extern QString globalkey;

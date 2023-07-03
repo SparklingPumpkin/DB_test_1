@@ -1,11 +1,13 @@
 #include "memberwindow.h"
 #include "ui_memberwindow.h"
 #include <QApplication>
-#include "c_memberinfo.h"
 #include "c_membermarket.h"
 #include "c_memberorder.h"
 #include "c_memberchat.h"
 #include "mainwindow.h"
+#include <QCoreApplication>
+#include <QProcess>
+#include <QDebug>
 
 QString globalkey;
 
@@ -14,6 +16,7 @@ memberwindow::memberwindow(QWidget *parent) :
     ui(new Ui::memberwindow)
 {
     ui->setupUi(this);
+
 
     // 连接数据库
     this -> myDatabase.getConnection();
@@ -40,6 +43,12 @@ void memberwindow::get_message_2(QString m){
 
 
 //跳转
+void memberwindow::on_pB_logoff_clicked()
+{
+    this->~memberwindow();
+    MainWindow * w = new MainWindow();
+    w -> show();
+}
 void memberwindow::on_pB_market_clicked()
 {
     this->~memberwindow();
@@ -52,18 +61,36 @@ void memberwindow::on_pB_order_clicked()
     c_memberorder * w = new c_memberorder();
     w -> show();
 }
+
+//chat
+
 void memberwindow::on_pB_chat_clicked()
 {
     this->~memberwindow();
     c_memberchat * w = new c_memberchat();
     w -> show();
 }
-void memberwindow::on_pB_logoff_clicked()
-{
-    this->~memberwindow();
-    MainWindow * w = new MainWindow();
-    w -> show();
-}
+
+//void memberwindow::on_pB_chat_clicked()
+//{
+//    QString program = "D:/Anaconda/envs/DB/python.exe";  // Python解释器的路径或命令
+//    QStringList arguments;  // Python脚本和参数列表
+
+//    QString scriptPath = "E:/Program Data/Qt/MMS/MMS/test_py_1.py";  // Python脚本的路径
+//    //    QString scriptPath = "E:/C_projects/ChaGPT-API-Call-main/test.py";
+//    arguments << scriptPath;
+
+//    QProcess process;
+//    process.start(program, arguments);
+//    process.waitForFinished();  // 等待命令执行完成
+
+//    QByteArray output = process.readAllStandardOutput();  // 获取命令输出结果
+//    QString outputString = QString::fromUtf8(output);
+
+//    // 处理输出结果，例如更新UI或打印日志
+//    qDebug() << "Command output:" << outputString;
+//}
+
 
 void memberwindow::setTableInfo(){
         // 设置表头

@@ -49,3 +49,10 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+INCLUDEPATH += -I D:\Anaconda\envs\DB\include
+LIBS += -LD:\Anaconda\envs\DB\libs -lpython39
+
+DISTFILES += \
+    scriptSecond.py \
+    test_py_1.py
