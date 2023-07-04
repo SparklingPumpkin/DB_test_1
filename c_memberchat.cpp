@@ -43,4 +43,7 @@ void c_memberchat::on_pB_chat_clicked()
 
     // 处理输出结果，例如更新UI或打印日志
     qDebug() << "Command output:" << outputString;
+
+    // 更新UI中的LineEdit
+    ui->Output->setText(outputString);
 }

@@ -8,6 +8,7 @@
 #include <database.h>
 #include "admwindow.h"
 #include "memberwindow.h"
+#include "c_memberorder.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -39,6 +40,7 @@ private:
     //通信
     admwindow admwindow_d;
     memberwindow memberwindow_d;
+    c_memberorder c_memberorder_d;
 
 };
 #endif // MAINWINDOW_H

@@ -3,7 +3,8 @@ import openai
 import sys
 print("------start------")
 
-openai.api_key = "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"
+#openai.api_key = "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"
+openai.api_key = "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"
 
 
 #completion = openai.ChatCompletion.create(
@@ -15,6 +16,7 @@ openai.api_key = "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"
 #        {"role": "user", "content": "Where was it played?"}
 #    ]
 #)
+
 question = sys.argv[1]
 completion = openai.ChatCompletion.create(
     model="gpt-3.5-turbo",

@@ -54,7 +54,7 @@ private slots:
 
     void on_pB_getinfo_clicked();
 
-//    void onProcessFinished(int exitCode, QProcess::ExitStatus exitStatus);
+
 
 private:
     Ui::memberwindow *ui;

@@ -39,7 +39,7 @@ void c2_admerchandise::setTableInfo(){
     this->dataTableModel->setHorizontalHeaderItem(1,new QStandardItem("merchandiseName"));
     this->dataTableModel->setHorizontalHeaderItem(2,new QStandardItem("price"));
     this->dataTableModel->setHorizontalHeaderItem(3,new QStandardItem("stock"));
-    this->dataTableModel->setHorizontalHeaderItem(4,new QStandardItem("photo"));
+    this->dataTableModel->setHorizontalHeaderItem(4,new QStandardItem("remark"));
 
 
     // 设置表格信息

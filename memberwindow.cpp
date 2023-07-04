@@ -34,6 +34,7 @@ memberwindow::~memberwindow()
     delete ui;
 }
 
+//通信
 void memberwindow::get_message_2(QString m){
 //    qDebug()<<"是本大爷!";
 //    qDebug()<<m;

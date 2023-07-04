@@ -4,6 +4,7 @@
 #include "memberwindow.h"
 #include "admwindow.h"
 #include "memberwindow.h"
+#include "c_memberorder.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -14,7 +15,7 @@ MainWindow::MainWindow(QWidget *parent)
     //通信
     connect(this, &MainWindow::sendToB, &admwindow_d, &admwindow::get_message); // 连接信号与槽
     connect(this, &MainWindow::sendToB, &memberwindow_d, &memberwindow::get_message_2); // 连接信号与槽
-
+    connect(this, &MainWindow::sendToB, &c_memberorder_d, &c_memberorder::get_message_3); // 连接信号与槽
 }
 
 MainWindow::~MainWindow()
@@ -51,6 +52,8 @@ void MainWindow::on_pushButton_clicked()
     admwindow_d.get_message(userInputNumber);
     emit sendToB(userInputNumber); //发送信号
     memberwindow_d.get_message_2(userInputNumber);
+    emit sendToB(userInputNumber); //发送信号
+    c_memberorder_d.get_message_3(userInputNumber);
     emit sendToB(userInputNumber); //发送信号
 
 

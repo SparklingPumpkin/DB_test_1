@@ -36,6 +36,8 @@ public:
 private slots:
     void on_pB_back_clicked();
 
+    void on_pB_create_4_clicked();
+
 private:
     Ui::c_membermarket *ui;
 };

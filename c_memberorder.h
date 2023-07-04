@@ -33,11 +33,19 @@ public:
     // 设置表格组件模式
     QStandardItemModel * dataTableModel;
 
+//通信
+public slots:
+    void get_message_3(QString m);
+
 private slots:
     void on_pB_back_clicked();
+
+    void on_pB_getinfo_clicked();
 
 private:
     Ui::c_memberorder *ui;
 };
+
+extern QString globalkey2;
 
 #endif // C_MEMBERORDER_H

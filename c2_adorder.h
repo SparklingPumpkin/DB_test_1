@@ -49,6 +49,8 @@ private slots:
 
 
 
+    void on_pB_select_2_clicked();
+
 private:
     Ui::c2_adorder *ui;
 };
