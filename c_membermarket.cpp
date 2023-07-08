@@ -43,26 +43,83 @@ void c_membermarket::on_pB_create_4_clicked()
     QString temper = QString::number(rand());
 
     QSqlQuery sql;
-    sql.prepare("insert into `order` values(:c2_merchandiseNumber,:c2_merchandiseName,:c2_price,:c2_stock,:c2_photo)");
-    sql.bindValue(":c2_merchandiseNumber",temper);
-    sql.bindValue(":c2_merchandiseName",globalkey);
-    qDebug() << globalkey;
-    sql.bindValue(":c2_price",c2_merchandiseNumber);
-    sql.bindValue(":c2_stock",c2_stock);
-    sql.bindValue(":c2_photo",100);
 
-    bool addIF = sql.exec();
-    if(addIF)
-    {
-        qDebug()<<"购买成功！";
+    //获取商品价格
+    sql.prepare("SELECT price FROM `merchandise` WHERE merchandiseNumber = :merchandiseNumber");
+    sql.bindValue(":merchandiseNumber",c2_merchandiseNumber);
+    sql.exec();
+    sql.next();
+    int c2_price = sql.value(0).toInt();
+    //获取余额
+    sql.prepare("SELECT balance FROM `member` WHERE memberNumber = :merchandiseNumber");
+    sql.bindValue(":merchandiseNumber",globalkey);
+    sql.exec();
+    sql.next();
+    int c2_balance = sql.value(0).toInt();
+    //获取库存
+    sql.prepare("SELECT stock FROM `merchandise` WHERE merchandiseNumber = :merchandiseNumber");
+    sql.bindValue(":merchandiseNumber",c2_merchandiseNumber);
+    sql.exec();
+    sql.next();
+    int c2_stockori = sql.value(0).toInt();
+
+    if(c2_balance < c2_price*c2_stock.toInt() || c2_stockori < c2_stock.toInt()){
+        qDebug()<<"库存不足或余额不足，购买失败！";
+    }
+    else{
+        sql.prepare("insert into `order` values(:c2_merchandiseNumber,:c2_merchandiseName,:c2_price,:c2_stock,:c2_photo)");
+        sql.bindValue(":c2_merchandiseNumber",temper);
+        sql.bindValue(":c2_merchandiseName",globalkey);
+        qDebug() << globalkey;
+        sql.bindValue(":c2_price",c2_merchandiseNumber);
+        sql.bindValue(":c2_stock",c2_stock);
+        qDebug() << c2_price;
+        sql.bindValue(":c2_photo",c2_price*c2_stock.toInt());
+        bool addIF3 = sql.exec();
+        if(addIF3)
+        {
+            qDebug()<<"库存充足，购买成功！";
+        }
+        else
+        {
+            qDebug()<<"库存不足，购买失败！";
+        }
+
+
+        sql.prepare("update `merchandise` set stock=stock-:c2_stock where merchandiseNumber=:c2_merchandiseNumber");
+        sql.bindValue(":c2_merchandiseNumber",c2_merchandiseNumber);
+        sql.bindValue(":c2_stock",c2_stock);
+        bool addIF = sql.exec();
+        if(addIF)
+        {
+            qDebug()<<"库存更改成功！";
+        }
+        else
+        {
+            qDebug()<<"库存更改失败！";
+        }
+
+
+        sql.prepare("update `member` set balance=balance-:c2_stock*(select sum(`price`) from `merchandise` where merchandiseNumber=:c2_merchandiseNumber) where memberNumber=:globalkey");
+        sql.bindValue(":c2_stock",c2_stock.toInt());
+        sql.bindValue(":c2_merchandiseNumber",c2_merchandiseNumber);
+        sql.bindValue(":globalkey",globalkey);
+        bool addIF2 = sql.exec();
+        if(addIF2)
+        {
+            qDebug()<<"balance更改成功！";
+        }
+        else
+        {
+            qDebug()<<"balance更改失败！";
+        }
+
+        sql.clear();
         c_membermarket::getDatabaseInfo();
-    }
-    else
-    {
-        qDebug()<<"购买失败！";
+
     }
 
-    sql.clear();
+
 }
 
 

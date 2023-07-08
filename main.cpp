@@ -15,9 +15,9 @@ int main(int argc, char *argv[])
     Database::getConnection();
     // Database::quitConnection();
     MainWindow w;
-    memberwindow w2;
+//    memberwindow w2;
 
-    w2.show();
+    w.show();
 
     QProcess process;
     process.start("python test_py_1.py"); // 替换为你要执行的命令

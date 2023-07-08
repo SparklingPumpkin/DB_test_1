@@ -22,7 +22,7 @@ admwindow::~admwindow()
 void admwindow::get_message(QString m){
     qDebug()<<"是本大爷!";
     qDebug()<<m;
-    ui->label_2->setText(m);
+
 }
 
 //跳转

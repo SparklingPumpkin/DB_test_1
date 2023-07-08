@@ -45,6 +45,9 @@ FORMS += \
     mainwindow.ui \
     memberwindow.ui
 
+
+
+
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
@@ -56,3 +59,6 @@ LIBS += -LD:\Anaconda\envs\DB\libs -lpython39
 DISTFILES += \
     scriptSecond.py \
     test_py_1.py
+
+RESOURCES += \
+    test.qrc

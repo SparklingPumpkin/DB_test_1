@@ -17,10 +17,10 @@
    <widget class="QPushButton" name="pB_memberm">
     <property name="geometry">
      <rect>
-      <x>150</x>
+      <x>140</x>
       <y>150</y>
-      <width>86</width>
-      <height>29</height>
+      <width>121</width>
+      <height>71</height>
      </rect>
     </property>
     <property name="text">
@@ -30,10 +30,10 @@
    <widget class="QPushButton" name="pB_orderm">
     <property name="geometry">
      <rect>
-      <x>470</x>
-      <y>150</y>
-      <width>86</width>
-      <height>29</height>
+      <x>140</x>
+      <y>250</y>
+      <width>121</width>
+      <height>71</height>
      </rect>
     </property>
     <property name="text">
@@ -43,10 +43,10 @@
    <widget class="QPushButton" name="pB_merchandisem">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>330</y>
-      <width>86</width>
-      <height>29</height>
+      <x>140</x>
+      <y>350</y>
+      <width>121</width>
+      <height>71</height>
      </rect>
     </property>
     <property name="text">
@@ -56,14 +56,14 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>40</y>
-      <width>81</width>
-      <height>20</height>
+      <x>270</x>
+      <y>50</y>
+      <width>241</width>
+      <height>61</height>
      </rect>
     </property>
     <property name="text">
-     <string>你好, 管理员</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;你好, 管理&lt;/span&gt;&lt;span style=&quot; font-size:16pt; font-weight:700;&quot;&gt;员&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pB_logoff">
@@ -77,19 +77,6 @@
     </property>
     <property name="text">
      <string>退出登录</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>390</x>
-      <y>40</y>
-      <width>62</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>!</string>
     </property>
    </widget>
   </widget>
